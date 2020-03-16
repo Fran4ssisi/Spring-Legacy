@@ -1,4 +1,4 @@
-package ex00;
+package org.zerock.web;
 
 import javax.inject.Inject;
 
