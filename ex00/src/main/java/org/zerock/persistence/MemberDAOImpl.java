@@ -23,5 +23,17 @@ public class MemberDAOImpl implements MemberDAO{
 	public void insertMember(MemberVO vo) {
 		sqlSession.insert(namespace + ".insertMember", vo);
 	}
-
+	
+	@Override
+	public MemberVO readMember(String userid) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public MemberVO readWithPW(String userid, String userpw) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }
