@@ -1,5 +1,7 @@
 package org.zerock.persistence;
 
+import java.util.HashMap;
+import java.util.Map;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -26,14 +28,17 @@ public class MemberDAOImpl implements MemberDAO{
 	
 	@Override
 	public MemberVO readMember(String userid) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	  return (MemberVO)sqlSession.selectOne(namespace + ".selectMember", userid);
 	}
 	
 	@Override
-	public MemberVO readWithPW(String userid, String userpw) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public MemberVO readWithPW(String userid, String pw) throws Exception {
+	  Map<String, Object> paramMap = new HashMap<>();
+	  
+	  paramMap.put("userid", userid);
+	  paramMap.put("userpw", pw);
+	  
+	  return sqlSession.selectOne(namespace + ".readWithPW", paramMap);
 	}
 	
 }
