@@ -1,12 +1,14 @@
 package org.zerock.domain;
 
+import java.util.Date;
+
 public class BoardVO {
   
   private Integer bno;
   private String title;
   private String content;
   private String writer;
-  private String regdate;
+  private Date regdate;
   private int viewcnt;
   
   public Integer getBno() {
@@ -41,11 +43,11 @@ public class BoardVO {
     this.writer = writer;
   }
   
-  public String getRegdate() {
+  public Date getRegdate() {
     return regdate;
   }
   
-  public void setRegdate(String regdate) {
+  public void setRegdate(Date regdate) {
     this.regdate = regdate;
   }
   
